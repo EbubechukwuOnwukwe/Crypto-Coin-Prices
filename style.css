@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: 0% 0% / 100px 100px repeat repeating-linear-gradient(to bottom left, #4e6ab1ff 0% 10%, #91a3cfff 10% 20%, #adbadbff 20% 30%, #d8deeeff 30% 40%, #f4f6faff 40% 50%), 0% 0% / 100px 100px repeat repeating-linear-gradient(to bottom right, #4e6ab1ff 0% 10%, #91a3cfff 10% 20%, #adbadbff 20% 30%, #d8deeeff 30% 40%, #f4f6faff 40% 50%), radial-gradient(farthest-corner at 50% 50%, #db24c0ff 0%, #184295ff 100%);
+    background-blend-mode: multiply;
+    color: #dcd8d8;
+    margin: auto;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+}
+
+table,th,td {
+    border: 1px solid #dcd8d8;
+    border-collapse: collapse;
+}
