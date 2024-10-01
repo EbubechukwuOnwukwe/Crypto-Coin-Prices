@@ -5,6 +5,10 @@
             .then(data => {
                 const table = document.getElementById('crypto-table');
 
+                // Sort data alphabetically by symbol
+                data.sort((a, b) => a.symbol.localeCompare(b.symbol));
+
+
                 // Clear the table except for the headers
                 table.innerHTML = `
                         <tr>
