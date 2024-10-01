@@ -5,13 +5,19 @@
             .then(data => {
                 const table = document.getElementById('crypto-table');
 
-                // Sort data based on the last 3 letters of the symbol
+                // Sort data based on the last 3 letters and then alphabetically by symbol
                     data.sort((a, b) => {
-                        const lastThreeA = a.symbol.slice(-3);  // Get last 3 letters of symbol A
-                        const lastThreeB = b.symbol.slice(-3);  // Get last 3 letters of symbol B
+                        const lastThreeA = a.symbol.slice(-3); // Last 3 letters of symbol A
+                        const lastThreeB = b.symbol.slice(-3); // Last 3 letters of symbol B
 
-                        // Sort alphabetically based on the last 3 letters
-                        return lastThreeA.localeCompare(lastThreeB);
+                        // First, compare by last 3 letters
+                        const lastThreeCompare = lastThreeA.localeCompare(lastThreeB);
+                        if (lastThreeCompare !== 0) {
+                            return lastThreeCompare; // If they are different, sort by last three letters
+                        }
+
+                        // If the last three letters are the same, sort by the full symbol
+                        return a.symbol.localeCompare(b.symbol);
                     });
 
                 // Clear the table except for the headers
